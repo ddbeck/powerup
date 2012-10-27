@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  		<meta charset="utf-8">
+  		<title>Is the power on?</title>
+  		<style>
+  		body {
+  			{% if up %}
+  				color: black;
+  				background-color: white;
+  			{% else %}
+  				color: white;
+  				background-color: black;
+  			{% endif %}
+  		}
+  		</style>
+	</head>
+	<body style="text-align: center; padding-top: 10%; font-family: Helvetica, Arial, sans-serif;">
+		<div>
+			<p style="font-weight: bold; font-size: 100pt; text-transform: uppercase;" id="answer">
+				{% if error %}
+					{{ error }}</p>
+				{% else %}
+					{% if up %}
+						Powered up!</p>
+					{% else %}
+						Power out.</p>
+					{% endif %}
+					{% if up %}
+						<p style="font-weight: normal; font-size: 10pt;">Or at least that was the case {{ last_updated }} minute{% if last_updated > 1 or last_updated == 0 %}s{% endif %} ago.</p>
+						<p style="font-weight: normal; font-size: 10pt;">router uptime: {{ uptime }}</p>
+					{% endif %}
+				{% endif %}
+		</div>
+	</body>
+</html>
