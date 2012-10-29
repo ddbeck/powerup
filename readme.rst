@@ -25,7 +25,7 @@ running, configure a device to periodically POST to the application with the
 device's uptime and the secret token. This works best on an always-on device,
 like a router. Here's an example with cURL::
 
-    curl --data-urlencode "token=secrettoken" --data-urlencode "uptime=$(uptime)" example.com/update
+    curl --data-urlencode "token=secrettoken" --data-urlencode "uptime=$(uptime)" http://example.com/update
 
 Then you can quickly and easily check the status at the base URL.
 
