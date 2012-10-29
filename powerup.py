@@ -5,10 +5,13 @@ import os
 import datetime
 
 app = Flask(__name__, template_folder='templates')
+
 app.config['STATUS_FILE'] = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
     'status.txt'
 )
+app.config['POWER_TIMEOUT'] = 30
+
 app.config.from_object('settings')
 
 
@@ -34,7 +37,7 @@ def get_power_info():
              datetime.datetime.fromtimestamp(mtime))
 
     return {
-        'up': (delta.seconds // 60) < 30,
+        'up': (delta.seconds // 60) < app.config['POWER_TIMEOUT'],
         'last_updated': delta.seconds // 60,
         'uptime': uptime,
     }
