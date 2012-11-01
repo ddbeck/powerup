@@ -12,13 +12,8 @@ Usage
 
 The application is an extremely simple Flask application (see
 ``requirements.txt`` for a complete list of Python dependencies). You will also
-need the following:
-
-* write access to a file named ``status.txt`` in the same directory as
-  ``powerup.py``
-
-* file name ``settings.py`` in the same directory as ``powerup.py`` containing
-  the application settings (see the `Settings`_ section below)
+need a ``settings`` module (e.g., ``settings.py``) containing the application
+settings (see the `Settings`_ section below).
 
 Please use your preferred WSGI deployment method. Once the application is
 running, configure a device to periodically POST to the application with the
@@ -45,4 +40,8 @@ The ``settings`` module may contain the following settings:
     webserver to refuse requests to the ``/update`` URL from unexepcted IP
     addresses as well).
 
-Settings with a default value may be omitted.
+``STATUS_FILE``
+    (Default: ``status.txt`` in the currrent working directory.) The path to the
+    file in which the latest status is stored.
+
+Settings with a default value may be omitted from the ``settings`` module.
