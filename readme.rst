@@ -27,7 +27,7 @@ like a router. Here's an example with cURL::
 
     curl --data-urlencode "token=secrettoken" --data-urlencode "uptime=$(uptime)" http://example.com/update
 
-Then you can quickly and easily check the status at the base URL.
+Then you can check the status at the base URL.
 
 
 Settings
