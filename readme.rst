@@ -45,3 +45,14 @@ The ``settings`` module may contain the following settings:
     file in which the latest status is stored.
 
 Settings with a default value may be omitted from the ``settings`` module.
+
+
+Copyright and License
+---------------------
+
+Copyright 2012 Daniel D. Beck.
+
+This is free software.
+You can redistribute it and/or modify it under the terms of the WTFPL, Version 2.
+See LICENSE.txt for details.
+
