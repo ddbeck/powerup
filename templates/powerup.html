@@ -29,6 +29,8 @@
 					{% if up %}
 						<p style="font-weight: normal; font-size: 10pt;">Or at least that was the case {{ last_updated }} minute{% if last_updated > 1 or last_updated == 0 %}s{% endif %} ago.</p>
 						<p style="font-weight: normal; font-size: 10pt;">router uptime: {{ uptime }}</p>
+          {% else %}
+            <p style="font-weight: normal; font-size: 10pt;">For about {{ last_updated }} minute{% if last_updated > 1 or last_updated == 0 %}s{% endif %} now.</p>
 					{% endif %}
 				{% endif %}
 		</div>
