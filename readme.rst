@@ -59,7 +59,7 @@ Settings with a default value may be omitted from the ``settings`` module.
 Copyright and License
 ---------------------
 
-Copyright 2012 Daniel D. Beck.
+Copyright 2015 Daniel D. Beck.
 
 This is free software.
 You can redistribute it and/or modify it under the terms of the WTFPL, Version 2.
