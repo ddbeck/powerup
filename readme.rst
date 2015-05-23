@@ -48,6 +48,11 @@ The ``settings`` module may contain the following settings:
     (Default: ``status.txt`` in the currrent working directory.) The path to the
     file in which the latest status is stored.
 
+``ACTIVE``
+    (Default: ``True``) Whether powerup should report its status. If set to
+    ``False`` updates are still accepted, but the status page reports thtat the
+    site is disabled.
+
 Settings with a default value may be omitted from the ``settings`` module.
 
 

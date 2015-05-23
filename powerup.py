@@ -7,6 +7,7 @@ import datetime
 app = Flask(__name__, template_folder='templates')
 app.config['STATUS_FILE'] = 'status.txt'
 app.config['POWER_TIMEOUT'] = 30
+app.config['ACTIVE'] = True
 app.config.from_object('settings')
 
 
@@ -41,15 +42,18 @@ def get_power_info():
 @app.route("/")
 def status():
     """Get the current status."""
-    try:
-        power_info = get_power_info()
-    except NoTimeFileError:
-        return render_template(
-            'powerup.html',
-            error='Who knows if the power is on? The status file is missing!'
-        )
+    ctx = {'error': None}
 
-    return render_template('powerup.html', **power_info)
+    if not app.config['ACTIVE']:
+        ctx['error'] = "This site is disabled, so who cares if the power's on?"
+
+    try:
+        ctx.update(get_power_info())
+    except NoTimeFileError:
+        ctx['error'] = (
+            'Who knows if the power is on? The status file is missing!')
+
+    return render_template('powerup.html', **ctx)
 
 
 @app.route("/update", methods=['POST'])
