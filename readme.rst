@@ -6,9 +6,9 @@ connection status to the web. I wrote it as hurricane Sandy approached on
 October 27, 2012 so, if I left the house, I would know whether I would be coming
 back to working lights and a cold refrigerator.
 
-Please see `power.danieldbeck.com`_ for a demonstration.
+Please see `power.ddbeck.com`_ for a demonstration.
 
-.. _power.danieldbeck.com: http://power.danieldbeck.com/
+.. _power.ddbeck.com: http://power.ddbeck.com/
 
 
 Usage
